@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Ingredients from "./Ingredients";
 
 export default function FoodDetails({ foodId }) {
   const [food, setFood] = useState({});
@@ -64,7 +65,9 @@ export default function FoodDetails({ foodId }) {
             </p>
           )}
 
-          <div className="card-actions justify-end"></div>
+          <div className="card-actions justify-end">
+            <Ingredients food={food} isLoading={isLoading} key={food.id} />
+          </div>
         </div>
       </div>
     </div>
